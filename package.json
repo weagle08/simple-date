@@ -22,10 +22,10 @@
     "simple-date"
   ],
   "author": "weagle08 <weagle08@gmail.com> (https://github.com/weagle08)",
-  "license": {
+  "licenses": [{
       "type": "MIT",
       "url": "https://github.com/weagle08/simple-date/blob/master/LICENSE"
-  },
+  }],
   "bugs": {
     "url": "https://github.com/weagle08/simple-date/issues"
   },

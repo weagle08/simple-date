@@ -156,44 +156,99 @@ describe('SIMPLE DATE TEST ->', function(){
     });
 
     it('move to previous ...', function(){
+        var date = new SimpleDate(2015, 6, 23);
+        date.moveToDayOfWeek(4, -1);
 
+        assert(date.getYear() == 2015);
+        assert(date.getMonth() == 6);
+        assert(date.getDate() == 16);
     });
 
     it('add months', function(){
+        var date = new SimpleDate(2015, 6, 19);
+        date.addMonths(3);
 
+        assert(date.getYear() == 2015);
+        assert(date.getMonth() == 9);
+        assert(date.getDate() == 19);
+
+        //add months to month with less days than current
+        date = new SimpleDate(2015, 6, 31);
+        date.addMonths(2);
+
+        assert(date.getYear() == 2015);
+        assert(date.getMonth() == 8);
+        assert(date.getDate() == 30);
     });
 
     it('subtract months', function(){
+        var date = new SimpleDate(2015, 6, 19);
+        date.addMonths(-3);
 
+        assert(date.getYear() == 2015);
+        assert(date.getMonth() == 3);
+        assert(date.getDate() == 19);
+
+        //subtract months to month with less days than current
+        date = new SimpleDate(2015, 6, 31);
+        date.addMonths(-3);
+
+        assert(date.getYear() == 2015);
+        assert(date.getMonth() == 3);
+        assert(date.getDate() == 30);
     });
 
     it('add 12 months', function(){
+        var date = new SimpleDate(2015, 6, 19);
+        date.addMonths(12);
 
+        assert(date.getYear() == 2016);
+        assert(date.getMonth() == 6);
+        assert(date.getDate() == 19);
     });
 
     it('subtract 12 months', function(){
+        var date = new SimpleDate(2015, 6, 19);
+        date.addMonths(-12);
 
+        assert(date.getYear() == 2014);
+        assert(date.getMonth() == 6);
+        assert(date.getDate() == 19);
     });
 
     it('serialize', function(){
+        var date = new SimpleDate(2015, 6, 23);
+        var sdate = date.serialize();
 
-    });
-
-    it('toString', function(){
-
+        assert(sdate.year == 2015);
+        assert(sdate.month == 6);
+        assert(sdate.date == 23);
     });
 
     it('get days difference', function(){
+        var dateA = new SimpleDate(2015, 6, 19);
+        var dateB = new SimpleDate(2015, 6, 23);
 
+        var diff = dateA.getDaysDifference(dateB);
+
+        assert(diff == 4);
     });
 
     it('get days difference LARGE', function(){
+        var dateA = new SimpleDate(2000, 6, 19);
+        var dateB = new SimpleDate(2015, 6, 23);
 
+        var diff = dateA.getDaysDifference(dateB);
+
+        assert(diff == 5482);
     });
 
     it('get days difference NONE', function(){
+        var dateA = new SimpleDate(2015, 6, 19);
+        var dateB = new SimpleDate(2015, 6, 19);
 
+        var diff = dateA.getDaysDifference(dateB);
+
+        assert(diff == 0);
     });
-
-
 });

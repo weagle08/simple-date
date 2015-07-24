@@ -1,0 +1,22 @@
+{
+  "name": "simple-datejs",
+  "version": "0.1.0",
+  "homepage": "https://github.com/weagle08/simple-date",
+  "authors": [
+    "<weagle08@gmail.com>"
+  ],
+  "description": "replacement for the javascript date object which does not use time",
+  "main": "lib/SimpleDate.js",
+  "keywords": [
+    "date",
+    "simple-date"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

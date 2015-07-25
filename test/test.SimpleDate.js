@@ -231,7 +231,7 @@ describe('SIMPLE DATE TEST ->', function(){
 
         var diff = dateA.getDaysDifference(dateB);
 
-        assert(diff == 4);
+        assert(diff === -4);
     });
 
     it('get days difference LARGE', function(){
@@ -240,7 +240,7 @@ describe('SIMPLE DATE TEST ->', function(){
 
         var diff = dateA.getDaysDifference(dateB);
 
-        assert(diff == 5482);
+        assert(diff === -5482);
     });
 
     it('get days difference NONE', function(){
@@ -249,7 +249,7 @@ describe('SIMPLE DATE TEST ->', function(){
 
         var diff = dateA.getDaysDifference(dateB);
 
-        assert(diff == 0);
+        assert(diff === 0);
     });
 
     it('parse date string', function(){

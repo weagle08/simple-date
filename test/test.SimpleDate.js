@@ -251,4 +251,26 @@ describe('SIMPLE DATE TEST ->', function(){
 
         assert(diff == 0);
     });
+
+    it('parse date string', function(){
+        var date = '07-24-2015';
+        date = SimpleDate.parse(date, 'MM-dd-yyyy');
+
+        assert(date.getYear() === 2015);
+        assert(date.getMonth() === 6);
+        assert(date.getDate() === 24);
+
+    });
+
+    it('toString', function(){
+        var date = new SimpleDate(2015, 6, 24);
+        var dstr = date.toString();
+        console.log(dstr);
+        dstr = date.toString('MM/dd/yyyy');
+        console.log(dstr);
+        dstr = date.toString('M/d/yyyy');
+        console.log(dstr);
+        dstr = date.toString('MMMM dd, yyyy');
+        console.log(dstr);
+    });
 });

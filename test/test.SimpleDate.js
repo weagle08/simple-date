@@ -231,7 +231,7 @@ describe('SIMPLE DATE TEST ->', function(){
 
         var diff = dateA.getDaysDifference(dateB);
 
-        assert(diff === -4);
+        assert(diff === 4);
     });
 
     it('get days difference LARGE', function(){
@@ -240,7 +240,7 @@ describe('SIMPLE DATE TEST ->', function(){
 
         var diff = dateA.getDaysDifference(dateB);
 
-        assert(diff === -5482);
+        assert(diff === 5482);
     });
 
     it('get days difference NONE', function(){
@@ -265,12 +265,12 @@ describe('SIMPLE DATE TEST ->', function(){
     it('toString', function(){
         var date = new SimpleDate(2015, 6, 24);
         var dstr = date.toString();
-        console.log(dstr);
+        assert(dstr === '2015-6-24');
         dstr = date.toString('MM/dd/yyyy');
-        console.log(dstr);
+        assert(dstr === '06/24/2015');
         dstr = date.toString('M/d/yyyy');
-        console.log(dstr);
+        assert(dstr === '6/24/2015');
         dstr = date.toString('MMMM dd, yyyy');
-        console.log(dstr);
+        assert(dstr === 'July 24, 2015');
     });
 });

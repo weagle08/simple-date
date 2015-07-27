@@ -1,10 +1,14 @@
 # simple-date
 This date object is for use in place of the default javascript date object. It does not have a time component, and adds some cool features like getting the days difference between two dates.
 
-#example usage
-(can also be used client side)
+##install
+$ npm install simple-datejs
 
-##constructors
+$ bower install simple-datejs
+
+##usage
+
+###constructors
 
 ```javascript
 var SimpleDate = require('simple-datejs');
@@ -21,7 +25,7 @@ date = new SimpleDate(date);
 date = new SimpleDate(new Date());
 ```
 
-##get difference between two dates
+###get difference between two dates
 
 ```javascript
 var date = new SimpleDate();
@@ -34,7 +38,7 @@ var diff = date.getDaysDifference(date2);
 console.log(diff);
 ```
 
-##writing and parsing date string
+###writing and parsing date string
 
 ```javascript
 var SimpleDate = require('simple-datejs');

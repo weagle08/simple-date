@@ -265,11 +265,11 @@ describe('SIMPLE DATE TEST ->', function(){
     it('toString', function(){
         var date = new SimpleDate(2015, 6, 24);
         var dstr = date.toString();
-        assert(dstr === '2015-6-24');
+        assert(dstr === '2015-7-24');
         dstr = date.toString('MM/dd/yyyy');
-        assert(dstr === '06/24/2015');
+        assert(dstr === '07/24/2015');
         dstr = date.toString('M/d/yyyy');
-        assert(dstr === '6/24/2015');
+        assert(dstr === '7/24/2015');
         dstr = date.toString('MMMM dd, yyyy');
         assert(dstr === 'July 24, 2015');
     });

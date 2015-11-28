@@ -274,3 +274,36 @@ describe('SIMPLE DATE TEST ->', function(){
         assert(dstr === 'July 24, 2015');
     });
 });
+
+describe('PERIOD CALCULATOR TEST ->', function() {
+    var start = new SimpleDate(2015, 2, 1);
+    var end = new SimpleDate(2015, 6, 31);
+
+    it('get one time periods', function(){
+        var results = SimpleDate.calculatePeriodDates(start, end, 0);
+        assert(results.length === 1);
+    });
+
+    it('get daily periods', function(){
+        var results = SimpleDate.calculatePeriodDates(start, end, 1);
+        assert(results.length === 153);
+    });
+
+    it('get weekly periods', function(){
+        var results = SimpleDate.calculatePeriodDates(start, end, 2);
+        assert(results.length === 22);
+    });
+
+    it('get bi-weekly periods', function(){
+        var results = SimpleDate.calculatePeriodDates(start, end, 3);
+        assert(results.length === 11);
+    });
+
+    it('get monthly periods', function(){
+        var results = SimpleDate.calculatePeriodDates(start, end, 4);
+        assert(results.length === 5);
+
+        results = SimpleDate.calculatePeriodDates(start, start, 4);
+        assert(results.length ===1);
+    });
+});

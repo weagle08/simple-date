@@ -6,9 +6,11 @@ $ npm install simple-datejs
 
 $ bower install simple-datejs
 
+$ jspm install simple-datejs
+
 ##usage
 
-###constructors
+*constructors*
 
 ```javascript
 var SimpleDate = require('simple-datejs');
@@ -25,7 +27,7 @@ date = new SimpleDate(date);
 date = new SimpleDate(new Date());
 ```
 
-###get difference between two dates
+*get difference between two dates*
 
 ```javascript
 var date = new SimpleDate();
@@ -38,7 +40,7 @@ var diff = date.getDaysDifference(date2);
 console.log(diff);
 ```
 
-###writing and parsing date string
+*writing and parsing date string*
 
 ```javascript
 var SimpleDate = require('simple-datejs');
@@ -51,4 +53,25 @@ console.log(date.toString('MMMM dd, yyyy'); //ex: July 07, 2015
 
 date = SimpleDate.parse('2015-07-27', 'yyyy-MM-dd');
 date = SimpleDate.parse('07/27/2015', 'MM/dd/yyyy');
+```
+
+*calculating dates on a given period between two dates*
+
+0 - one time<br/>
+1 - daily<br/>
+2 - weekly<br/>
+3 - biweekly<br/>
+4 - monthly<br/>
+
+```javascript
+var SimpleDate = require('date-periodjs');
+
+var frequency = 2;
+var start = new Date(2014, 6, 25);
+var end = new Date(2015, 6, 25);
+
+//[date,date,date]
+var dates = SimpleDate.calculatePeriodDates(start, end, frequency);
+
+console.log(dates);
 ```

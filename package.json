@@ -37,9 +37,7 @@
   "homepage": "https://github.com/weagle08/simple-date#readme",
   "jspm": {
     "directories": {
-      "baseURL": "lib",
-      "lib": "lib",
-      "test": "test"
+      "lib": "lib"
     },
     "main": "SimpleDate.js",
     "devDependencies": {}

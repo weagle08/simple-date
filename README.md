@@ -64,7 +64,7 @@ date = SimpleDate.parse('07/27/2015', 'MM/dd/yyyy');
 4 - monthly<br/>
 
 ```javascript
-var SimpleDate = require('date-periodjs');
+var SimpleDate = require('simple-datejs');
 
 var frequency = 2;
 var start = new Date(2014, 6, 25);
